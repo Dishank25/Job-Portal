@@ -1,0 +1,1785 @@
+{
+  "info": {
+    "_postman_id": "a44cba07-61bb-424d-b415-5563317fa65b",
+    "name": "User Management API Collection",
+    "description": "A collection of User Management APIs for testing.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "27988846"
+  },
+  "item": [
+    {
+      "name": "userProfile",
+      "item": [
+        {
+          "name": "Increment View Count of Job Post",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer <your_token>"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/company-recruiter/jobpost/11/increment-view",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": [
+                "api",
+                "company-recruiter",
+                "jobpost",
+                "11",
+                "increment-view"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Application",
+      "item": [
+        {
+          "name": "Update Application Status",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjksImVtYWlsIjoiMDIzLmFua2l0c3JpdmFzdGF2QGdtYWlsLmNvbSIsInJvbGUiOiJDT01QQU5ZIiwiaWF0IjoxNzU1Nzc3OTUzLCJleHAiOjE3NjA5NjE5NTN9.J5rLj0kTRkFwC-CXwhh4Q0rYJB38owkm1y6ARdQQRYQ"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/application/sapplied\"",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "application", "sapplied\""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get My Job Applications (User)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzcsImVtYWlsIjoiZGNyeXB0LmF1QGdtYWlsLmNvbSIsInJvbGUiOiJTVFVERU5UIiwiaWF0IjoxNzU1ODQxNTIxLCJleHAiOjE3NjEwMjU1MjF9.cux844pvOv5MVSuL5ntBpStmbu3fG67nn9ek0yV7ls4"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/user/applications",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "user", "applications"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Apply for a Job",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzcsImVtYWlsIjoiZGNyeXB0LmF1QGdtYWlsLmNvbSIsInJvbGUiOiJTVFVERU5UIiwiaWF0IjoxNzU1ODQxNTIxLCJleHAiOjE3NjEwMjU1MjF9.cux844pvOv5MVSuL5ntBpStmbu3fG67nn9ek0yV7ls4"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"why_should_we_hire_you\": \"I am highly skilled and motivated.\",\n  \"confirm_availability\": \"Yes\",\n  \"project\": \"Project description here\",\n  \"github_link\": \"https://github.com/yourprofile\",\n  \"portfolio_link\": \"https://yourportfolio.com\",\n  \"education\": \"B.tech\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/jobpost/apply/31",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "jobpost", "apply", "31"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "MasterData",
+      "item": [
+        {
+          "name": "Course",
+          "item": [
+            {
+              "name": "Create Course in bulk(Admin)",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"courses\": [\r\n    {\r\n      \"name\": \"Computer Science\"\r\n    },\r\n    {\r\n      \"name\": \"Information Technology\"\r\n    },\r\n    {\r\n      \"name\": \"Electronics & Communication\"\r\n    },\r\n    {\r\n      \"name\": \"Mechanical Engineering\"\r\n    },\r\n    {\r\n      \"name\": \"Civil Engineering\"\r\n    },\r\n    {\r\n      \"name\": \"Electrical Engineering\"\r\n    },\r\n    {\r\n      \"name\": \"Chemical Engineering\"\r\n    },\r\n    {\r\n      \"name\": \"Biotechnology\"\r\n    },\r\n    {\r\n      \"name\": \"Business Administration\"\r\n    },\r\n    {\r\n      \"name\": \"Commerce\"\r\n    },\r\n    {\r\n      \"name\": \"Economics\"\r\n    },\r\n    {\r\n      \"name\": \"Mathematics\"\r\n    },\r\n    {\r\n      \"name\": \"Physics\"\r\n    },\r\n    {\r\n      \"name\": \"Chemistry\"\r\n    },\r\n    {\r\n      \"name\": \"Biology\"\r\n    },\r\n    {\r\n      \"name\": \"Medicine\"\r\n    },\r\n    {\r\n      \"name\": \"Law\"\r\n    },\r\n    {\r\n      \"name\": \"Arts\"\r\n    },\r\n    {\r\n      \"name\": \"Design\"\r\n    },\r\n    {\r\n      \"name\": \"Architecture\"\r\n    }\r\n  ]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/master/courses/bulk",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "5000",
+                  "path": ["api", "master", "courses", "bulk"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "GetAllCourses",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"questions\": [\r\n    \"How do I register as a student?\",\r\n    \"Can I apply for multiple jobs?\"\r\n  ],\r\n  \"answers\": [\r\n    \"Click on the Register button and fill out the student form.\",\r\n    \"Yes, you can apply to as many jobs as you like.\"\r\n  ],\r\n  \"role\": \"Student\"\r\n}"
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/master/courses",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "5000",
+                  "path": ["api", "master", "courses"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "getCourseById",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://212.95.51.83:5000/api/master/courses/id=7",
+                  "protocol": "http",
+                  "host": ["212", "95", "51", "83"],
+                  "port": "5000",
+                  "path": ["api", "master", "courses", "id=7"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "createSingleCourse",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "updateCourse",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "deleteCourse",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://212.95.51.83:5000/api/master/courses/12",
+                  "protocol": "http",
+                  "host": ["212", "95", "51", "83"],
+                  "port": "5000",
+                  "path": ["api", "master", "courses", "12"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Location",
+          "item": [
+            {
+              "name": "Add location in bulk (admin)",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"locations\": [\r\n    {\r\n      \"name\": \"Mumbai, Maharashtra\"\r\n    },\r\n    {\r\n      \"name\": \"Delhi, NCR\"\r\n    },\r\n    {\r\n      \"name\": \"Bangalore, Karnataka\"\r\n    },\r\n    {\r\n      \"name\": \"Hyderabad, Telangana\"\r\n    },\r\n    {\r\n      \"name\": \"Chennai, Tamil Nadu\"\r\n    },\r\n    {\r\n      \"name\": \"Pune, Maharashtra\"\r\n    },\r\n    {\r\n      \"name\": \"Kolkata, West Bengal\"\r\n    },\r\n    {\r\n      \"name\": \"Ahmedabad, Gujarat\"\r\n    },\r\n    {\r\n      \"name\": \"Jaipur, Rajasthan\"\r\n    },\r\n    {\r\n      \"name\": \"Lucknow, Uttar Pradesh\"\r\n    },\r\n    {\r\n      \"name\": \"Chandigarh\"\r\n    },\r\n    {\r\n      \"name\": \"Indore, Madhya Pradesh\"\r\n    },\r\n    {\r\n      \"name\": \"Bhopal, Madhya Pradesh\"\r\n    },\r\n    {\r\n      \"name\": \"Patna, Bihar\"\r\n    },\r\n    {\r\n      \"name\": \"Bhubaneswar, Odisha\"\r\n    },\r\n    {\r\n      \"name\": \"Guwahati, Assam\"\r\n    },\r\n    {\r\n      \"name\": \"Thiruvananthapuram, Kerala\"\r\n    },\r\n    {\r\n      \"name\": \"Coimbatore, Tamil Nadu\"\r\n    },\r\n    {\r\n      \"name\": \"Vadodara, Gujarat\"\r\n    },\r\n    {\r\n      \"name\": \"Nagpur, Maharashtra\"\r\n    },\r\n    {\r\n      \"name\": \"Surat, Gujarat\"\r\n    },\r\n    {\r\n      \"name\": \"Varanasi, Uttar Pradesh\"\r\n    },\r\n    {\r\n      \"name\": \"Amritsar, Punjab\"\r\n    },\r\n    {\r\n      \"name\": \"Ludhiana, Punjab\"\r\n    },\r\n    {\r\n      \"name\": \"Kanpur, Uttar Pradesh\"\r\n    },\r\n    {\r\n      \"name\": \"Allahabad, Uttar Pradesh\"\r\n    },\r\n    {\r\n      \"name\": \"Ranchi, Jharkhand\"\r\n    },\r\n    {\r\n      \"name\": \"Jabalpur, Madhya Pradesh\"\r\n    },\r\n    {\r\n      \"name\": \"Gwalior, Madhya Pradesh\"\r\n    }\r\n  ]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://212.95.51.83:5000/api/master/location/bulk",
+                  "protocol": "http",
+                  "host": ["212", "95", "51", "83"],
+                  "port": "5000",
+                  "path": ["api", "master", "location", "bulk"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Get Location by Id",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/master/locations/10",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "5000",
+                  "path": ["api", "master", "locations", "10"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Get All locations (User , Admin)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/master/location/active",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "5000",
+                  "path": ["api", "master", "location", "active"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete location by Id",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/master/locations/10",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "5000",
+                  "path": ["api", "master", "locations", "10"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Add single location (user)",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Jaunpur, Uttar Pradesh\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/master/locations",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "5000",
+                  "path": ["api", "master", "locations"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update Location By Id",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": " {\r\n        \"id\": 10,\r\n        \"name\": \"Lucknow, Uttar Pradesh\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/master/locations/10",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "5000",
+                  "path": ["api", "master", "locations", "10"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Specialization",
+          "item": [
+            {
+              "name": "create Specialization in bulk",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"specializations\": [\r\n    {\r\n      \"name\": \"Software Engineering\",\r\n      \"courseId\": 1\r\n    },\r\n    {\r\n      \"name\": \"Data Science\",\r\n      \"courseId\": 1\r\n    },\r\n    {\r\n      \"name\": \"Artificial Intelligence\",\r\n      \"courseId\": 1\r\n    },\r\n    {\r\n      \"name\": \"Machine Learning\",\r\n      \"courseId\": 1\r\n    },\r\n    {\r\n      \"name\": \"Cybersecurity\",\r\n      \"courseId\": 1\r\n    },\r\n    {\r\n      \"name\": \"Web Development\",\r\n      \"courseId\": 2\r\n    },\r\n    {\r\n      \"name\": \"Mobile App Development\",\r\n      \"courseId\": 2\r\n    },\r\n    {\r\n      \"name\": \"Database Management\",\r\n      \"courseId\": 2\r\n    },\r\n    {\r\n      \"name\": \"Network Administration\",\r\n      \"courseId\": 2\r\n    },\r\n    {\r\n      \"name\": \"Digital Communications\",\r\n      \"courseId\": 3\r\n    },\r\n    {\r\n      \"name\": \"Signal Processing\",\r\n      \"courseId\": 3\r\n    },\r\n    {\r\n      \"name\": \"VLSI Design\",\r\n      \"courseId\": 3\r\n    },\r\n    {\r\n      \"name\": \"Robotics\",\r\n      \"courseId\": 4\r\n    },\r\n    {\r\n      \"name\": \"Automotive Engineering\",\r\n      \"courseId\": 4\r\n    },\r\n    {\r\n      \"name\": \"Manufacturing\",\r\n      \"courseId\": 4\r\n    },\r\n    {\r\n      \"name\": \"Structural Engineering\",\r\n      \"courseId\": 5\r\n    },\r\n    {\r\n      \"name\": \"Transportation Engineering\",\r\n      \"courseId\": 5\r\n    },\r\n    {\r\n      \"name\": \"Environmental Engineering\",\r\n      \"courseId\": 5\r\n    },\r\n    {\r\n      \"name\": \"Power Systems\",\r\n      \"courseId\": 6\r\n    },\r\n    {\r\n      \"name\": \"Control Systems\",\r\n      \"courseId\": 6\r\n    },\r\n    {\r\n      \"name\": \"Renewable Energy\",\r\n      \"courseId\": 6\r\n    },\r\n    {\r\n      \"name\": \"Process Engineering\",\r\n      \"courseId\": 7\r\n    },\r\n    {\r\n      \"name\": \"Petroleum Engineering\",\r\n      \"courseId\": 7\r\n    },\r\n    {\r\n      \"name\": \"Pharmaceutical Technology\",\r\n      \"courseId\": 7\r\n    },\r\n    {\r\n      \"name\": \"Genetic Engineering\",\r\n      \"courseId\": 8\r\n    },\r\n    {\r\n      \"name\": \"Bioinformatics\",\r\n      \"courseId\": 8\r\n    },\r\n    {\r\n      \"name\": \"Finance\",\r\n      \"courseId\": 9\r\n    },\r\n    {\r\n      \"name\": \"Marketing\",\r\n      \"courseId\": 9\r\n    },\r\n    {\r\n      \"name\": \"Human Resources\",\r\n      \"courseId\": 9\r\n    },\r\n    {\r\n      \"name\": \"Accounting\",\r\n      \"courseId\": 10\r\n    },\r\n    {\r\n      \"name\": \"Banking\",\r\n      \"courseId\": 10\r\n    },\r\n    {\r\n      \"name\": \"Investment Management\",\r\n      \"courseId\": 10\r\n    }\r\n  ]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://212.95.51.83:5000/api/master/specialization/bulk",
+                  "protocol": "http",
+                  "host": ["212", "95", "51", "83"],
+                  "port": "5000",
+                  "path": ["api", "master", "specialization", "bulk"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "geAllSpecializations",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/master/specializations",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "5000",
+                  "path": ["api", "master", "specializations"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "getSpecializationByID",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://212.95.51.83:5000/api/master/specialization/20",
+                  "protocol": "http",
+                  "host": ["212", "95", "51", "83"],
+                  "port": "5000",
+                  "path": ["api", "master", "specialization", "20"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "getSpecializationByCourse",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/master/specialization/course/1",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "5000",
+                  "path": ["api", "master", "specialization", "course", "1"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "createSingleSpecialization",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/master/specializations",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "5000",
+                  "path": ["api", "master", "specializations"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "deleteSpecialization",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/master/specializations/9",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "5000",
+                  "path": ["api", "master", "specializations", "9"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "SchoolCollge",
+          "item": [
+            {
+              "name": "Post SchoolCollege In BULK",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"colleges\": [\r\n    {\r\n      \"name\": \"Indian Institute of Technology Mumbai\",\r\n      \"logoPic\": \"https://example.com/college-logos/iit-mumbai.png\"\r\n    },\r\n    {\r\n      \"name\": \"Delhi University North Campus\",\r\n      \"logoPic\": \"https://example.com/college-logos/du-north.png\"\r\n    },\r\n    {\r\n      \"name\": \"Jamia Millia Islamia Central University\",\r\n      \"logoPic\": \"https://example.com/college-logos/jmi.png\"\r\n    },\r\n    {\r\n      \"name\": \"Anna University Chennai\",\r\n      \"logoPic\": \"https://example.com/college-logos/anna-univ.png\"\r\n    },\r\n    {\r\n      \"name\": \"Visvesvaraya Technological University Bangalore\",\r\n      \"logoPic\": \"https://example.com/college-logos/vtu.png\"\r\n    }\r\n  ]\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://212.95.51.83:5000/api/master/school-college/bulk",
+                  "protocol": "http",
+                  "host": ["212", "95", "51", "83"],
+                  "port": "5000",
+                  "path": ["api", "master", "school-college", "bulk"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Get SchoolCollege In BULK",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://212.95.51.83:5000/api/master/school-college",
+                  "protocol": "http",
+                  "host": ["212", "95", "51", "83"],
+                  "port": "5000",
+                  "path": ["api", "master", "school-college"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "FAQ",
+          "item": [
+            {
+              "name": "FAQ",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"questions\": [\"How do I register as a company?\"],\r\n  \"answers\": [\"Click on the 'Register' button and choose the 'Company' role, then fill in your organization details.\"],\r\n  \"role\": \"COMPANY\"\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://212.95.51.83:5000/api/master/faqs",
+                  "protocol": "http",
+                  "host": ["212", "95", "51", "83"],
+                  "port": "5000",
+                  "path": ["api", "master", "faqs"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "get company by role (COMPANY, STUDENT , UNIVERSITY)",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "text/plain"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"question\": \"How do I register?\",\n  \"answer\": \"Click on Sign Up.\",\n  \"role\": \"STUDENT\"\n}\n",
+                  "options": {
+                    "raw": {
+                      "language": "text"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://212.95.51.83:5000/api/master/faqs/student",
+                  "protocol": "http",
+                  "host": ["212", "95", "51", "83"],
+                  "port": "5000",
+                  "path": ["api", "master", "faqs", "student"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "ticket",
+          "item": [
+            {
+              "name": "Raise  tickets by role (user)",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"user_id\": 19,\r\n  \"name\": \"ankit\",\r\n  \"email\": \"a8291266012@gmail.com\",\r\n  \"role\": \"STUDENT\",\r\n  \"issueTitle\": \"Unable to login\",\r\n  \"issueDetail\": \"I am unable to login with my credentials.\",\r\n  \"priority\": \"HIGH\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://212.95.51.83:5000/api/tickets/raise",
+                  "protocol": "http",
+                  "host": ["212", "95", "51", "83"],
+                  "port": "5000",
+                  "path": ["api", "tickets", "raise"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "domain",
+          "item": [
+            {
+              "name": "Get All domain",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzYsImVtYWlsIjoiZGNyeXB0YXVAZ21haWwuY29tIiwicm9sZSI6IkNPTVBBTlkiLCJpYXQiOjE3NTU4NDQxMjIsImV4cCI6MTc2MTAyODEyMn0.W7QIcDVSYlTEbX2q2jykHZm2NxRwGZgNmXaAUyYc7Nc",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "http://localhost:5000/api/domain/all",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "5000",
+                  "path": ["api", "domain", "all"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "getSkillsByDomainId",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/skills/by-domain/1",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "5000",
+                  "path": ["api", "skills", "by-domain", "1"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "filter-options",
+          "item": [
+            {
+              "name": "Admin",
+              "item": [
+                {
+                  "name": "Perks",
+                  "item": [
+                    {
+                      "name": "Add New Perks(user)",
+                      "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{ \"value\": \"Flexible Work Hours\"}\r\n  ",
+                          "options": {
+                            "raw": {
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "http://localhost:5000/api/admin/perks",
+                          "protocol": "http",
+                          "host": ["localhost"],
+                          "port": "5000",
+                          "path": ["api", "admin", "perks"]
+                        }
+                      },
+                      "response": []
+                    },
+                    {
+                      "name": "Delete perks permanently (admin)",
+                      "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "http://localhost:5000/api/admin/perks/28/permanent",
+                          "protocol": "http",
+                          "host": ["localhost"],
+                          "port": "5000",
+                          "path": ["api", "admin", "perks", "28", "permanent"]
+                        }
+                      },
+                      "response": []
+                    },
+                    {
+                      "name": "update city By id (admin)",
+                      "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{ \"value\": \"Flexible Work Hours\"}\r\n  ",
+                          "options": {
+                            "raw": {
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "http://localhost:5000/api/admin/perks/28",
+                          "protocol": "http",
+                          "host": ["localhost"],
+                          "port": "5000",
+                          "path": ["api", "admin", "perks", "28"]
+                        }
+                      },
+                      "response": []
+                    },
+                    {
+                      "name": "Soft disactivate perks (admin)",
+                      "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "url": {
+                          "raw": "http://localhost:5000/api/admin/perks/28/deactivate",
+                          "protocol": "http",
+                          "host": ["localhost"],
+                          "port": "5000",
+                          "path": ["api", "admin", "perks", "28", "deactivate"]
+                        }
+                      },
+                      "response": []
+                    },
+                    {
+                      "name": "Soft activate perks (admin)",
+                      "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "url": {
+                          "raw": "http://localhost:5000/api/admin/perks/28/activate",
+                          "protocol": "http",
+                          "host": ["localhost"],
+                          "port": "5000",
+                          "path": ["api", "admin", "perks", "28", "activate"]
+                        }
+                      },
+                      "response": []
+                    },
+                    {
+                      "name": "active perks only (user,admin)",
+                      "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "http://localhost:5000/api/master/perks/active?is_active=true",
+                          "protocol": "http",
+                          "host": ["localhost"],
+                          "port": "5000",
+                          "path": ["api", "master", "perks", "active"],
+                          "query": [
+                            {
+                              "key": "is_active",
+                              "value": "true"
+                            }
+                          ]
+                        }
+                      },
+                      "response": []
+                    },
+                    {
+                      "name": "deactive Perks only (admin)",
+                      "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "http://localhost:5000/api/master/perks/active?is_active=false",
+                          "protocol": "http",
+                          "host": ["localhost"],
+                          "port": "5000",
+                          "path": ["api", "master", "perks", "active"],
+                          "query": [
+                            {
+                              "key": "is_active",
+                              "value": "false"
+                            }
+                          ]
+                        }
+                      },
+                      "response": []
+                    }
+                  ]
+                },
+                {
+                  "name": "DurationOption",
+                  "item": [
+                    {
+                      "name": "activate duration",
+                      "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "url": {
+                          "raw": "http://localhost:5000/api/admin/duration/31/activate",
+                          "protocol": "http",
+                          "host": ["localhost"],
+                          "port": "5000",
+                          "path": ["api", "admin", "duration", "31", "activate"]
+                        }
+                      },
+                      "response": []
+                    },
+                    {
+                      "name": "deactivate duation",
+                      "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "url": {
+                          "raw": "http://localhost:5000/api/admin/duration/31/deactivate",
+                          "protocol": "http",
+                          "host": ["localhost"],
+                          "port": "5000",
+                          "path": [
+                            "api",
+                            "admin",
+                            "duration",
+                            "31",
+                            "deactivate"
+                          ]
+                        }
+                      },
+                      "response": []
+                    },
+                    {
+                      "name": "get Active duarion (user , admin )",
+                      "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "http://localhost:5000/api/master/duration/active?is_active=true",
+                          "protocol": "http",
+                          "host": ["localhost"],
+                          "port": "5000",
+                          "path": ["api", "master", "duration", "active"],
+                          "query": [
+                            {
+                              "key": "is_active",
+                              "value": "true"
+                            }
+                          ]
+                        }
+                      },
+                      "response": []
+                    },
+                    {
+                      "name": "Post Duartion",
+                      "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{ \"value\": \"1 Month\" }",
+                          "options": {
+                            "raw": {
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "http://localhost:5000/api/admin/duration",
+                          "protocol": "http",
+                          "host": ["localhost"],
+                          "port": "5000",
+                          "path": ["api", "admin", "duration"]
+                        }
+                      },
+                      "response": []
+                    },
+                    {
+                      "name": "delete duration",
+                      "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "http://localhost:5000/api/admin/duration/30/permanent",
+                          "protocol": "http",
+                          "host": ["localhost"],
+                          "port": "5000",
+                          "path": [
+                            "api",
+                            "admin",
+                            "duration",
+                            "30",
+                            "permanent"
+                          ]
+                        }
+                      },
+                      "response": []
+                    },
+                    {
+                      "name": "get deactive Duration only (admin)",
+                      "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "http://localhost:5000/api/master/duration/active?is_active=false",
+                          "protocol": "http",
+                          "host": ["localhost"],
+                          "port": "5000",
+                          "path": ["api", "master", "duration", "active"],
+                          "query": [
+                            {
+                              "key": "is_active",
+                              "value": "false"
+                            }
+                          ]
+                        }
+                      },
+                      "response": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Job-roles",
+          "item": [
+            {
+              "name": "get Job roles (user,admin)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/master/job-roles",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "5000",
+                  "path": ["api", "master", "job-roles"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "add new JOb-roles(admin)",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"jobRole\": \"System Designer\",\r\n    \"description\": \"Responsible for designing, analyzing, and implementing system architecture to meet business and technical requirements. Works closely with developers, testers, and stakeholders to ensure system functionality, performance, and scalability.\"\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/master/job-roles",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "5000",
+                  "path": ["api", "master", "job-roles"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete job roles (admin)",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/master/job-roles/9",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "5000",
+                  "path": ["api", "master", "job-roles", "9"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update job roles (admin)",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"jobRole\": \"System Designer\",\r\n    \"description\": \"Responsible for designing, analyzing, and implementing system architecture to meet business and technical requirements. Works closely with developers, testers, and stakeholders to ensure system functionality, performance, and scalability.\"\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/master/job-roles/10",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "5000",
+                  "path": ["api", "master", "job-roles", "10"]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Recruiiter Dashbord",
+      "item": [
+        {
+          "name": "Pending task (status)",
+          "item": [
+            {
+              "name": "Applied",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjksImVtYWlsIjoiMDIzLmFua2l0c3JpdmFzdGF2QGdtYWlsLmNvbSIsInJvbGUiOiJDT01QQU5ZIiwiaWF0IjoxNzU1Nzc3OTUzLCJleHAiOjE3NjA5NjE5NTN9.J5rLj0kTRkFwC-CXwhh4Q0rYJB38owkm1y6ARdQQRYQ",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/pendingtask/Applied",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "5000",
+                  "path": ["api", "pendingtask", "Applied"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "ShortList",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjksImVtYWlsIjoiMDIzLmFua2l0c3JpdmFzdGF2QGdtYWlsLmNvbSIsInJvbGUiOiJDT01QQU5ZIiwiaWF0IjoxNzU1Nzc3OTUzLCJleHAiOjE3NjA5NjE5NTN9.J5rLj0kTRkFwC-CXwhh4Q0rYJB38owkm1y6ARdQQRYQ",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "http://localhost:5000/api/pendingtask/ShortList",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "5000",
+                  "path": ["api", "pendingtask", "ShortList"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Hired",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjksImVtYWlsIjoiMDIzLmFua2l0c3JpdmFzdGF2QGdtYWlsLmNvbSIsInJvbGUiOiJDT01QQU5ZIiwiaWF0IjoxNzU1Nzc3OTUzLCJleHAiOjE3NjA5NjE5NTN9.J5rLj0kTRkFwC-CXwhh4Q0rYJB38owkm1y6ARdQQRYQ",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "http://localhost:5000/api/pendingtask/Hired",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "5000",
+                  "path": ["api", "pendingtask", "Hired"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "grouped",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjksImVtYWlsIjoiMDIzLmFua2l0c3JpdmFzdGF2QGdtYWlsLmNvbSIsInJvbGUiOiJDT01QQU5ZIiwiaWF0IjoxNzU0ODk4NTU3LCJleHAiOjE3NTUwNzEzNTd9.s2PW9sGs99PwZoReW3Tg3PflqBc6wOu2rvTCVIpT5Ig",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "http://localhost:5000/api/pendingtask/grouped",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "5000",
+                  "path": ["api", "pendingtask", "grouped"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Total Job Post Count (Recruiter)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjksImVtYWlsIjoiMDIzLmFua2l0c3JpdmFzdGF2QGdtYWlsLmNvbSIsInJvbGUiOiJDT01QQU5ZIiwiaWF0IjoxNzU1Nzc3OTUzLCJleHAiOjE3NjA5NjE5NTN9.J5rLj0kTRkFwC-CXwhh4Q0rYJB38owkm1y6ARdQQRYQ"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/jobpost/totalcount",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "jobpost", "totalcount"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Job Posts (Recruiter)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzYsImVtYWlsIjoiZGNyeXB0YXVAZ21haWwuY29tIiwicm9sZSI6IkNPTVBBTlkiLCJpYXQiOjE3NTU4NDQxMjIsImV4cCI6MTc2MTAyODEyMn0.W7QIcDVSYlTEbX2q2jykHZm2NxRwGZgNmXaAUyYc7Nc"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/company-recruiter/jobpost/list",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "company-recruiter", "jobpost", "list"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "pending task count",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjksImVtYWlsIjoiMDIzLmFua2l0c3JpdmFzdGF2QGdtYWlsLmNvbSIsInJvbGUiOiJDT01QQU5ZIiwiaWF0IjoxNzU1Nzc3OTUzLCJleHAiOjE3NjA5NjE5NTN9.J5rLj0kTRkFwC-CXwhh4Q0rYJB38owkm1y6ARdQQRYQ",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/applications/status/Applied",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "applications", "status", "Applied"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "view pending task",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjksImVtYWlsIjoiMDIzLmFua2l0c3JpdmFzdGF2QGdtYWlsLmNvbSIsInJvbGUiOiJDT01QQU5ZIiwiaWF0IjoxNzU1Nzc3OTUzLCJleHAiOjE3NjA5NjE5NTN9.J5rLj0kTRkFwC-CXwhh4Q0rYJB38owkm1y6ARdQQRYQ",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/applications/status/Screening",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "applications", "status", "Screening"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "assignment",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjksImVtYWlsIjoiMDIzLmFua2l0c3JpdmFzdGF2QGdtYWlsLmNvbSIsInJvbGUiOiJDT01QQU5ZIiwiaWF0IjoxNzU1Nzc3OTUzLCJleHAiOjE3NjA5NjE5NTN9.J5rLj0kTRkFwC-CXwhh4Q0rYJB38owkm1y6ARdQQRYQ",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/university/27",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "university", "27"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "scheduleinterview",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzYsImVtYWlsIjoiZGNyeXB0YXVAZ21haWwuY29tIiwicm9sZSI6IkNPTVBBTlkiLCJpYXQiOjE3NTU4NDQxMjIsImV4cCI6MTc2MTAyODEyMn0.W7QIcDVSYlTEbX2q2jykHZm2NxRwGZgNmXaAUyYc7Nc",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/interview-invitations/9",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "interview-invitations", "9"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "approved",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "upcoming interview list",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get all Applicants applied for a particular job",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzYsImVtYWlsIjoiZGNyeXB0YXVAZ21haWwuY29tIiwicm9sZSI6IkNPTVBBTlkiLCJpYXQiOjE3NTU4NDQxMjIsImV4cCI6MTc2MTAyODEyMn0.W7QIcDVSYlTEbX2q2jykHZm2NxRwGZgNmXaAUyYc7Nc",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/jobpost/18/allapplicant",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "jobpost", "18", "allapplicant"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "jobPost/filter",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzYsImVtYWlsIjoiZGNyeXB0YXVAZ21haWwuY29tIiwicm9sZSI6IkNPTVBBTlkiLCJpYXQiOjE3NTU4NDQxMjIsImV4cCI6MTc2MTAyODEyMn0.W7QIcDVSYlTEbX2q2jykHZm2NxRwGZgNmXaAUyYc7Nc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/jobpost/filter",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "jobpost", "filter"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "jobPost/filtering",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzYsImVtYWlsIjoiZGNyeXB0YXVAZ21haWwuY29tIiwicm9sZSI6IkNPTVBBTlkiLCJpYXQiOjE3NTU4NDQxMjIsImV4cCI6MTc2MTAyODEyMn0.W7QIcDVSYlTEbX2q2jykHZm2NxRwGZgNmXaAUyYc7Nc",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/jobpost/filtering",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "jobpost", "filtering"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Full detail of Applicant with applicant ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjksImVtYWlsIjoiMDIzLmFua2l0c3JpdmFzdGF2QGdtYWlsLmNvbSIsInJvbGUiOiJDT01QQU5ZIiwiaWF0IjoxNzU1Nzc3OTUzLCJleHAiOjE3NjA5NjE5NTN9.J5rLj0kTRkFwC-CXwhh4Q0rYJB38owkm1y6ARdQQRYQ",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/jobpost/31/applicant/9",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "jobpost", "31", "applicant", "9"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Application by status(recruiter)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjksImVtYWlsIjoiMDIzLmFua2l0c3JpdmFzdGF2QGdtYWlsLmNvbSIsInJvbGUiOiJDT01QQU5ZIiwiaWF0IjoxNzU1Nzc3OTUzLCJleHAiOjE3NjA5NjE5NTN9.J5rLj0kTRkFwC-CXwhh4Q0rYJB38owkm1y6ARdQQRYQ",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/applications/status/Applied",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "applications", "status", "Applied"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Total no of applicants applied for a particular job",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjksImVtYWlsIjoiMDIzLmFua2l0c3JpdmFzdGF2QGdtYWlsLmNvbSIsInJvbGUiOiJDT01QQU5ZIiwiaWF0IjoxNzU1Nzc3OTUzLCJleHAiOjE3NjA5NjE5NTN9.J5rLj0kTRkFwC-CXwhh4Q0rYJB38owkm1y6ARdQQRYQ",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/jobpost/11/applicantCount",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "jobpost", "11", "applicantCount"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Auth",
+      "item": []
+    },
+    {
+      "name": "Create Job Post",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjksImVtYWlsIjoiMDIzLmFua2l0c3JpdmFzdGF2QGdtYWlsLmNvbSIsInJvbGUiOiJDT01QQU5ZIiwiaWF0IjoxNzU1NTEzMjc3LCJleHAiOjE3NjA2OTcyNzd9.N81wx-TNu0ONE2d2Ao_NWRZPfA3NnXn73n2qtQP1pec"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"company_recruiter_profile_id\": 5,\n  \"opportunity_type\": \"Internship\",\n  \"job_role_id\": 6,\n  \"skill_ids\": [2,3,4],\n  \"skill_required_note\": \"JavaScript, React, Node.js\",\n  \"job_type\": \"Full-time\",\n  \"job_time\": \"Day Shift\",\n  \"days_in_office\": 3,\n  \"number_of_openings\": 5,\n  \"job_description\": \"Looking for a skilled developer...\",\n  \"candidate_preferences\": \"Good communication skills\",\n  \"women_preferred\": false,\n  \"stipend_type\": \"Fixed\",\n  \"stipend_min\": 15000,\n  \"stipend_max\": 20000,\n  \"incentive_per_year\": \"Performance based\",\n  \"perks\": [\"Health Insurance\", \"Free Lunch\"],\n  \"screening_questions\": [\n    \"Do you have React experience?\",\n    \"Do you have Backend experience?\"\n  ],\n  \"phone_contact\": \"9876543210\",\n  \"duration_id\": 31,\n  \"internship_start_date\": \"2025-09-01\",\n  \"is_custom_internship_date\": false,\n  \"eligible_college_ids\": [2],\n  \"eligible_course_ids\": [1],\n  \"eligible_city_ids\": [27],\n  \"alternate_phone_number\": \"9876543211\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/jobpost/create",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "jobpost", "create"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Job Opportunities",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzYsImVtYWlsIjoiZGNyeXB0YXVAZ21haWwuY29tIiwicm9sZSI6IkNPTVBBTlkiLCJpYXQiOjE3NTU4NDQxMjIsImV4cCI6MTc2MTAyODEyMn0.W7QIcDVSYlTEbX2q2jykHZm2NxRwGZgNmXaAUyYc7Nc"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/opportunities",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "opportunities"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Specific Job Detail",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzYsImVtYWlsIjoiZGNyeXB0YXVAZ21haWwuY29tIiwicm9sZSI6IkNPTVBBTlkiLCJpYXQiOjE3NTU4NDQxMjIsImV4cCI6MTc2MTAyODEyMn0.W7QIcDVSYlTEbX2q2jykHZm2NxRwGZgNmXaAUyYc7Nc"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/jobdetails/23",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "jobdetails", "23"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Upload_Image",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "feedImage",
+              "type": "file",
+              "src": "postman-cloud:///1efb9714-0995-4b90-91a8-29e5d47d054e",
+              "disabled": true
+            },
+            {
+              "key": "profilePic",
+              "type": "file",
+              "src": "postman-cloud:///1ef8a143-dba6-4720-9de5-18d121fe0494",
+              "disabled": true
+            },
+            {
+              "key": "logoUrl",
+              "type": "file",
+              "src": "postman-cloud:///1ef8a145-c722-4c20-a874-28607c103eff",
+              "disabled": true
+            },
+            {
+              "key": "certificateImage",
+              "type": "file",
+              "src": "postman-cloud:///1efa30a1-3e30-4420-ba4d-acb585c555a8"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/upload-image",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "upload-image"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Terms and Conditions Acceptance Status",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/user-details/getTermsAndCondition",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "user-details", "getTermsAndCondition"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create/Update Company Recruiter Profile",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIyLCJlbWFpbCI6ImE4MjkxMjY2MTJAZ21haWwuY29tIiwicm9sZSI6IkNPTVBBTlkiLCJpYXQiOjE3NTQ2Mzg2OTcsImV4cCI6MTc1NDgxMTQ5N30.XEYgqL3wwmAr473o4dvMBl3Hn6GgBftGhywBkxlHRL4"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"designation\": \"HR Manager\",\r\n  \"companyName\": \"Tech Innovators Pvt Ltd\",\r\n  \"industry\": \"Information Technology\",\r\n  \"location\": \"Bangalore, India\",\r\n  \"about\": \"We are a leading IT solutions provider.\",\r\n  \"logoUrl\": \"https://example.com/company-logo.png\",\r\n  \"profilePic\": \"https://example.com/recruiter-profile-pic.jpg\",\r\n  \"hiringPreferences\": {\r\n    \"preferredDegree\": \"B.Tech\",\r\n    \"preferredExperience\": \"2+ years\",\r\n    \"preferredSkills\": [\"JavaScript\", \"React\", \"Node.js\"]\r\n  },\r\n  \"languagesKnown\": [\"English\", \"Hindi\"],\r\n  \"isEmailVerified\": true,\r\n  \"isPhoneVerified\": true,\r\n  \"isGstVerified\": false\r\n}"
+        },
+        "url": {
+          "raw": "http://212.95.51.83:5000/api/company-recruiter/profile/upload",
+          "protocol": "http",
+          "host": ["212", "95", "51", "83"],
+          "port": "5000",
+          "path": ["api", "company-recruiter", "profile", "upload"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Company Recruiter Profile",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjksImVtYWlsIjoiMDIzLmFua2l0c3JpdmFzdGF2QGdtYWlsLmNvbSIsInJvbGUiOiJDT01QQU5ZIiwiaWF0IjoxNzU1Nzc3OTUzLCJleHAiOjE3NjA5NjE5NTN9.J5rLj0kTRkFwC-CXwhh4Q0rYJB38owkm1y6ARdQQRYQ"
+          }
+        ],
+        "url": {
+          "raw": "http://212.95.51.83:5000/api/company-recruiter/profile",
+          "protocol": "http",
+          "host": ["212", "95", "51", "83"],
+          "port": "5000",
+          "path": ["api", "company-recruiter", "profile"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Company Recruiter Profile",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjksImVtYWlsIjoiMDIzLmFua2l0c3JpdmFzdGF2QGdtYWlsLmNvbSIsInJvbGUiOiJDT01QQU5ZIiwiaWF0IjoxNzU1Nzc3OTUzLCJleHAiOjE3NjA5NjE5NTN9.J5rLj0kTRkFwC-CXwhh4Q0rYJB38owkm1y6ARdQQRYQ"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/company-recruiter/profile",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "company-recruiter", "profile"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Search Job Posts by Company Name",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer <your_token>"
+          }
+        ],
+        "url": {
+          "raw": "{{BASE_URL}}/api/jobposts/companysearch?company_name=Techno%20tech",
+          "host": ["{{BASE_URL}}"],
+          "path": ["api", "jobposts", "companysearch"],
+          "query": [
+            {
+              "key": "company_name",
+              "value": "Techno%20tech"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "jobpost data",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjksImVtYWlsIjoiMDIzLmFua2l0c3JpdmFzdGF2QGdtYWlsLmNvbSIsInJvbGUiOiJDT01QQU5ZIiwiaWF0IjoxNzU1Nzc3OTUzLCJleHAiOjE3NjA5NjE5NTN9.J5rLj0kTRkFwC-CXwhh4Q0rYJB38owkm1y6ARdQQRYQ",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/opportunities",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "opportunities"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "universitydetail",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjksImVtYWlsIjoiMDIzLmFua2l0c3JpdmFzdGF2QGdtYWlsLmNvbSIsInJvbGUiOiJDT01QQU5ZIiwiaWF0IjoxNzU1NzUxNDk3LCJleHAiOjE3NjA5MzU0OTd9.NIVITCVgY-mnl-n1g1i0Dovs1ZpJ1f_MzIIwbmNlcVg",
+            "type": "text"
+          },
+          {
+            "key": "Token",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjksImVtYWlsIjoiMDIzLmFua2l0c3JpdmFzdGF2QGdtYWlsLmNvbSIsInJvbGUiOiJDT01QQU5ZIiwiaWF0IjoxNzU1NzUxNDk3LCJleHAiOjE3NjA5MzU0OTd9.NIVITCVgY-mnl-n1g1i0Dovs1ZpJ1f_MzIIwbmNlcVg",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/assignment",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "assignment"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "university_public",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "upload-skill",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"user_id\": 19,\r\n  \"skills\": [\r\n    {\r\n      \"skill_id\": 3,\r\n      \"skill\": \"JavaScript\",\r\n      \"authority\": \"Coursera\"\r\n    },\r\n    {\r\n      \"skill_id\": 4,\r\n      \"skill\": \"React\",\r\n      \"authority\": \"Edureka\"\r\n    }\r\n  ],\r\n  \"certificate_images\": [\r\n    \"http://localhost:5000/api/uploads/certificates/cert_unknown_1753194662208.png\",\r\n    \"\"\r\n  ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/upload-skill",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "upload-skill"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get recruiter certificates(recuiter)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/uploads/certificates/1752136756306_ajy8xs.pdf",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["uploads", "certificates", "1752136756306_ajy8xs.pdf"]
+        }
+      },
+      "response": []
+    }
+  ]
+}

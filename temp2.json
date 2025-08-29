@@ -1,0 +1,786 @@
+{
+  "info": {
+    "_postman_id": "8e7a4e99-684d-4f0a-984e-db2da66fa6c4",
+    "name": "JobPortal",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "27988846"
+  },
+  "item": [
+    {
+      "name": "UserRoutes",
+      "item": [
+        {
+          "name": "/register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"first_name\": \"Anshu\",\r\n  \"last_name\": \"Tiwari\",\r\n  \"email\": \"dcrypt.au@gmail.com\",\r\n  \"phone\": \"8901468794\",\r\n  \"password\": \"123\",\r\n  \"user_role\": \"STUDENT\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/users/login",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "users", "login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTEsImVtYWlsIjoiYXhjQGdtYWlsLmNvbSIsInJvbGUiOiJTVFVERU5UIiwiaWF0IjoxNzUxNDY0NTk3LCJleHAiOjE3NTE2MzczOTd9.RtI_4_K0F1BQMx4ft9VjFcYggeK7PHSE8Hslic5jApo",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n//   \"email\": \"023.ankitsrivastav@gmail.com\",\n\"email\": \"dcrypt.au@gmail.com\",\n  \"password\": \"i\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/users/login",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "users", "login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get User Basic Info",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"023.ankitsrivastav@gmail.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/api/users/getUserData",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "users", "getUserData"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Change User Email",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer <JWT Token>"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"user_id\": \"6\",\n  \"newEmail\": \"pandit123@gmail.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://212.95.51.83:5000/api/users/changeEmail",
+              "protocol": "http",
+              "host": ["212", "95", "51", "83"],
+              "port": "5000",
+              "path": ["api", "users", "changeEmail"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Change Password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer <JWT Token>"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"oldPassword\": \"diksha ji\",\n  \"newPassword\": \"i\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/users/changePassword",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "users", "changePassword"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/forgot passwrod",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"email\":\"dcryptau@gmail.com\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/api/users/forgotPassword",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "users", "forgotPassword"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Soft Delete Account",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzgsImVtYWlsIjoiZGNyeXBhdUBnbWFpbC5jb20iLCJyb2xlIjoiU1RVREVOVCIsImlhdCI6MTc1NTkzNzQ4OSwiZXhwIjoxNzYxMTIxNDg5fQ.-VT3W6oxQ-UfkP1d3vQ72uaxXwgsWA3w1OH51UZZil8",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"user_id\": \"38\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://212.95.51.83:5000/api/users/softDeleteAccount",
+              "protocol": "http",
+              "host": ["212", "95", "51", "83"],
+              "port": "5000",
+              "path": ["api", "users", "softDeleteAccount"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "otpmobileroutes",
+      "item": [
+        {
+          "name": "Send OTP (Mobile)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"phoneNumber\": \"6353004557\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/mobileotp/sendotp",
+              "host": ["{{BASE_URL}}"],
+              "path": ["mobileotp", "sendotp"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Verify OTP (Mobile)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Response status code is 200\", function () {\r",
+                  "    pm.expect(pm.response.code).to.equal(200);\r",
+                  "});\r",
+                  "\r",
+                  "\r",
+                  "pm.test(\"Response contains required fields: message and userDetail\", function () {\r",
+                  "    const responseData = pm.response.json();\r",
+                  "    \r",
+                  "    pm.expect(responseData).to.be.an('object');\r",
+                  "    pm.expect(responseData).to.have.all.keys('message', 'userDetail');\r",
+                  "});\r",
+                  "\r",
+                  "\r",
+                  "pm.test(\"UserDetail Object Structure and Required Fields Validation\", function () {\r",
+                  "    const responseData = pm.response.json();\r",
+                  "    \r",
+                  "    pm.expect(responseData).to.be.an('object');\r",
+                  "    pm.expect(responseData.userDetail).to.be.an('object');\r",
+                  "\r",
+                  "    // Check for existence of properties in userDetail\r",
+                  "    pm.expect(responseData.userDetail).to.have.all.keys(\r",
+                  "        'id', 'user_id', 'firstName', 'lastName', 'email', \r",
+                  "        'phone', 'dob', 'aadhaarNumber', 'aadhaarCardFile', \r",
+                  "        'isAadhaarVerified', 'currentLocationId', 'jobLocationId', \r",
+                  "        'gender', 'userType', 'salaryDetails', 'currentlyLookingFor', \r",
+                  "        'workMode', 'aboutus', 'careerObjective', 'resume', \r",
+                  "        'language', 'isEmailVerified', 'isPhoneVerified', \r",
+                  "        'isGstVerified', 'userprofilepic', 'termsAndCondition', \r",
+                  "        'createdAt', 'updatedAt', 'experiences', 'educations'\r",
+                  "    );\r",
+                  "\r",
+                  "    // Validate types of specific fields\r",
+                  "    pm.expect(responseData.userDetail.id).to.be.a('number');\r",
+                  "    pm.expect(responseData.userDetail.user_id).to.be.a('number');\r",
+                  "    pm.expect(responseData.userDetail.firstName).to.be.a('string');\r",
+                  "    pm.expect(responseData.userDetail.lastName).to.be.a('string');\r",
+                  "    pm.expect(responseData.userDetail.email).to.match(/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/); // Email format\r",
+                  "    pm.expect(responseData.userDetail.phone).to.be.a('string');\r",
+                  "    pm.expect(responseData.userDetail.dob).to.be.a('string');\r",
+                  "    pm.expect(responseData.userDetail.isAadhaarVerified).to.be.a('boolean');\r",
+                  "    pm.expect(responseData.userDetail.currentLocationId).to.be.a('number');\r",
+                  "    pm.expect(responseData.userDetail.jobLocationId).to.be.a('number');\r",
+                  "    pm.expect(responseData.userDetail.isEmailVerified).to.be.a('boolean');\r",
+                  "    pm.expect(responseData.userDetail.isPhoneVerified).to.be.a('boolean');\r",
+                  "    pm.expect(responseData.userDetail.isGstVerified).to.be.a('boolean');\r",
+                  "    pm.expect(responseData.userDetail.termsAndCondition).to.be.a('boolean');\r",
+                  "    \r",
+                  "    // Validate array fields\r",
+                  "    pm.expect(responseData.userDetail.experiences).to.be.an('array');\r",
+                  "    pm.expect(responseData.userDetail.educations).to.be.an('array');\r",
+                  "    pm.expect(responseData.skills).to.be.an('array');\r",
+                  "});\r",
+                  "\r",
+                  "\r",
+                  "pm.test(\"Response time is less than 200ms\", function () {\r",
+                  "    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+                  "});\r",
+                  "\r",
+                  "\r",
+                  "pm.test(\"Experiences and Educations are valid arrays\", function () {\r",
+                  "    const responseData = pm.response.json();\r",
+                  "    \r",
+                  "    // Check that experiences is an array and validate its contents\r",
+                  "    pm.expect(responseData.userDetail.experiences).to.be.an('array');\r",
+                  "    responseData.userDetail.experiences.forEach(experience => {\r",
+                  "        pm.expect(experience).to.be.an('object').that.is.empty; // Assuming valid objects are empty for this test\r",
+                  "    });\r",
+                  "\r",
+                  "    // Check that educations is an array and validate its contents\r",
+                  "    pm.expect(responseData.userDetail.educations).to.be.an('array');\r",
+                  "    responseData.userDetail.educations.forEach(education => {\r",
+                  "        pm.expect(education).to.be.an('object').that.is.empty; // Assuming valid objects are empty for this test\r",
+                  "    });\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTksImVtYWlsIjoiYTgyOTEyNjYwMTJAZ21haWwuY29tIiwicm9sZSI6IlNUVURFTlQiLCJpYXQiOjE3NTQ5NzUxNjAsImV4cCI6MTc1NTE0Nzk2MH0.Ac0ukhP_S0SiIeR9gB3tXWa2x62DTllGrlpeyIzZXHE",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"phoneNumber\": \"9598579077\",\n  \"otp\": \"7970\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/mobileotp/verifyotp",
+              "host": ["{{BASE_URL}}"],
+              "path": ["mobileotp", "verifyotp"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "otp email",
+      "item": [
+        {
+          "name": "/send-otp",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"dcryptau@gmail.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/otp/send-otp",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "otp", "send-otp"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/verify-otp",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"dcryptau@gmail.com\",\n  \"otp\": \"6835\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/otp/verify-otp",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "otp", "verify-otp"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "/user-details",
+      "item": [
+        {
+          "name": "Submit Detailed User Profile",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzcsImVtYWlsIjoiZGNyeXB0LmF1QGdtYWlsLmNvbSIsInJvbGUiOiJTVFVERU5UIiwiaWF0IjoxNzU1ODQxNTIxLCJleHAiOjE3NjEwMjU1MjF9.cux844pvOv5MVSuL5ntBpStmbu3fG67nn9ek0yV7ls4",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"user_id\": 123,\n  \"first_name\": \"anshu\",\n  \"last_name\": \"tiwari\",\n  \"email\": \"dcrypt.au@gmail.com\",\n  \"phone\": \"58798598\",\n  \"dob\": \"1990-01-01\",\n  \"city\": \"Delhi\",\n  \"gender\": \"male\",\n  \"user_type\": \"STUDENT\",\n  \"job_location\": \"San Francisco\",\n  \"experiences\": [\n    {\n      \"user_id\": 123,\n      \"company_recruiter_profile_id\": \"4\",\n      \"job_role\": \"Software Engineer\",\n      \"company\": \"OriginCore\",\n      \"start_date\": \"2022-01-01\",\n      \"end_date\": \"2023-01-01\",\n      \"description\": \"Worked on backend development\"\n    }\n  ],\n  \"salary_details\": \"100000\",\n  \"currently_looking_for\": \"job\",\n  \"work_mode\": \"Remote\",\n  \"aadhaar_number\": 123412341234,\n  \"is_aadhaar_verified\":true\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/api/user-details/detail",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "user-details", "detail"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/detail/:user_id",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/user-details/detail/30",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "user-details", "detail", "30"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/detail/:user_id",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTksImVtYWlsIjoiYTgyOTEyNjYwMTJAZ21haWwuY29tIiwicm9sZSI6IlNUVURFTlQiLCJpYXQiOjE3NTUzMjkxMjUsImV4cCI6MTc1NTUwMTkyNX0.EtDOe_L4u3ezGwLL3y57yiJEGbf2T_at-Yo8bMKONjA",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"firstName\": \"Ankit\",\r\n  \"lastName\": \"Srivastava\",\r\n  \"phone\": \"9598579078\",\r\n  \"dob\": \"1995-05-15\",\r\n  \"aadhaarNumber\": \"123124134\",\r\n  \"aadhaarCardFile\": \"aadhaar_verified.pdf\",\r\n  \"isAadhaarVerified\": true,\r\n  \"currentLocationId\": 1,\r\n  \"jobLocationId\": 2,\r\n  \"gender\": \"Male\",\r\n  \"userType\": \"STUDENT\",\r\n  \"salaryDetails\": \"15-20 LPA\",\r\n  \"currentlyLookingFor\": \"Senior Role\",\r\n  \"workMode\": \"On-site\",\r\n  \"aboutus\": \"Experienced software engineer with 5+ years in full-stack development.\",\r\n  \"careerObjective\": \"To lead technical teams and contribute to innovative projects.\",\r\n  \"resume\": \"comprehensive_resume.pdf\",\r\n  \"language\": \"English, Hindi, Spanish\",\r\n  \"isEmailVerified\": true,\r\n  \"isPhoneVerified\": false,\r\n  \"isGstVerified\": true,\r\n  \"userprofilepic\": \"professional_profile.jpg\",\r\n  \"termsAndCondition\": true,\r\n  \"experiences\": [\r\n    {\r\n      \"currentCompany\": \"Amazon\",\r\n      \"currentJobRole\": \"Senior Software Engineer\",\r\n      \"startDate\": \"2022-01-01\",\r\n      \"endDate\": null,\r\n      \"status\": \"approved\",\r\n      \"experienceCertificate\": \"amazon_cert.pdf\"\r\n    }\r\n  ],\r\n  \"educations\": [\r\n    {\r\n      \"level\": \"Bachelor's\",\r\n      \"schoolCollegeId\": 2,\r\n      \"boardOrUniversity\": \"Harvard University\",\r\n      \"courseId\": 1,\r\n      \"specializationId\": 1,\r\n      \"startYear\": \"2013\",\r\n      \"endYear\": \"2017\",\r\n      \"percentageOrCgpa\": \"8.5\",\r\n      \"educationCertificate\": \"degree_crt.pdf\"\r\n    }\r\n  ],\r\n  \"skills\": [\r\n    {\r\n      \"skill\": \"JavaScript\",\r\n      \"authority\": \"Advanced\",\r\n      \"skill_id\": 1\r\n    },\r\n    {\r\n      \"skill\": \"React\",\r\n      \"authority\": \"Intermediate\",\r\n      \"skill_id\": 2\r\n    },\r\n    {\r\n      \"skill\": \"Node.js\",\r\n      \"authority\": \"Advanced\",\r\n      \"skill_id\": 3\r\n    },\r\n    {\r\n      \"skill\": \"Python\",\r\n      \"authority\": \"Intermediate\",\r\n      \"skill_id\": 4\r\n    },\r\n    {\r\n      \"skill\": \"MongoDB\",\r\n      \"authority\": \"Beginner\",\r\n      \"skill_id\": 5\r\n    }\r\n  ],\r\n  \"certificate_images\": [\r\n    \"javascript_cert.pdf\",\r\n    \"reat_cert.pdf\",\r\n    \"nodejs_cert.pdf\",\r\n    \"python_cert.pdf\",\r\n    \"mongodb_cert.pdf\"\r\n  ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/user-details/detail/19",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "user-details", "detail", "19"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "public profile",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://212.95.51.83:5000/api/user-details/public-profile/6",
+              "protocol": "http",
+              "host": ["212", "95", "51", "83"],
+              "port": "5000",
+              "path": ["api", "user-details", "public-profile", "6"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Aadhaar Verification Status",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzMsImVtYWlsIjoiYTgyOTEyNjYwMTJAZ21haWwuY29tIiwicm9sZSI6IlNUVURFTlQiLCJpYXQiOjE3NTI4MjM1NzYsImV4cCI6MTc1Mjk5NjM3Nn0.6dBeVLUDCcJ7EwOpuGS4g-PeKjmODw63LlLhbZ3f9L4"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/user-details/aadhaarVerificationStatus",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "user-details", "aadhaarVerificationStatus"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Aadhaar Details",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer <JWT Token>"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/user-details/updateAadhaarDetails",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "user-details", "updateAadhaarDetails"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Terms and conditions",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://212.95.51.83:5000/api/user-details/getTermsAndCondition",
+              "protocol": "http",
+              "host": ["212", "95", "51", "83"],
+              "port": "5000",
+              "path": ["api", "user-details", "getTermsAndCondition"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Terms and Conditions Acceptance",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzMsImVtYWlsIjoiYTgyOTEyNjYwMTJAZ21haWwuY29tIiwicm9sZSI6IlNUVURFTlQiLCJpYXQiOjE3NTI4MjM1NzYsImV4cCI6MTc1Mjk5NjM3Nn0.6dBeVLUDCcJ7EwOpuGS4g-PeKjmODw63LlLhbZ3f9L4"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "  {\r\n    \"user_id\": 6,\r\n    \"accepted\": true\r\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://212.95.51.83:5000/api/user-details/updateTermsAndCondition",
+              "protocol": "http",
+              "host": ["212", "95", "51", "83"],
+              "port": "5000",
+              "path": ["api", "user-details", "updateTermsAndCondition"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "New Folder",
+      "item": []
+    },
+    {
+      "name": "/feed",
+      "item": [
+        {
+          "name": "getfeed",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzcsImVtYWlsIjoiZGNyeXB0LmF1QGdtYWlsLmNvbSIsInJvbGUiOiJTVFVERU5UIiwiaWF0IjoxNzU1NzczMTgzLCJleHAiOjE3NjA5NTcxODN9.N8r5eCFVWBldA_kx1qcD8PkxwPAUwczkcphTBzUVhvE",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/feed/posts/?page=1&limit=5",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "feed", "posts", ""],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "5"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Feed post",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n     \"user_id\": 19,\r\n  \"image\": \"http://example.com/image.jpg\",\r\n  \"caption\": \"This is a test feed post\"\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/feed/feed",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "feed", "feed"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "like",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n       \"user_id\":19,\r\n       \"action\":\"like\"\r\n} ",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/feed/posts/27/like",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "feed", "posts", "27", "like"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "comment",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n   \"user_id\": 19,\r\n  \"comment\": \"Great post!\"\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://212.95.51.83:5000/api/feed/posts/27/comment",
+              "protocol": "http",
+              "host": ["212", "95", "51", "83"],
+              "port": "5000",
+              "path": ["api", "feed", "posts", "27", "comment"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "follow/unfollow",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"followerId\": 16,\r\n \"followedId\": 7\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://212.95.51.83:5000/api/feed/follow",
+              "protocol": "http",
+              "host": ["212", "95", "51", "83"],
+              "port": "5000",
+              "path": ["api", "feed", "follow"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get followers/following",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/api/feed/96/following",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "feed", "96", "following"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
+
+{"data":[{"job_id":31,"company_name":"Tech Innovators Pvt Ltd","logo_url":"https://example.com/company-logo.png","jobRole":"Backend Developer","skills":[{"skill_id":2,"skill_name":"CSS"},{"skill_id":3,"skill_name":"JavaScript"},{"skill_id":4,"skill_name":"React"}],"matchPercentage":0,"experience":"Good communication skills","salary":"15000 - 20000"},{"job_id":30,"company_name":"Tech Innovators Pvt Ltd","logo_url":"https://example.com/company-logo.png","jobRole":"Backend Developer","skills":[{"skill_id":2,"skill_name":"CSS"},{"skill_id":3,"skill_name":"JavaScript"},{"skill_id":4,"skill_name":"React"}],"matchPercentage":0,"experience":"","salary":""},{"job_id":29,"company_name":"Tech Innovators Pvt Ltd","logo_url":"https://example.com/company-logo.png","jobRole":"Backend Developer","skills":[{"skill_id":2,"skill_name":"CSS"},{"skill_id":3,"skill_name":"JavaScript"},{"skill_id":4,"skill_name":"React"}],"matchPercentage":0,"experience":"","salary":""},{"job_id":28,"company_name":"Tech Innovators Pvt Ltd"}],}
